@@ -1,7 +1,9 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Utente {
@@ -9,19 +11,14 @@ public class Utente {
     private String codiceFiscale;
     private Date nascita;
     private ArrayList<Integer> idLibro = new ArrayList<Integer>();
+    //private HashMap<Integer, Integer> idLibro = new HashMap<Integer, Integer>();
     private String tipoUtenza;
-    private static final AtomicInteger count = new AtomicInteger(0);
-    private int countPrestiti;
-    private int tesera;
+    private final AtomicInteger countPunti = new AtomicInteger(0);
+    private int tesseraPunti;
 
 
-    public Utente(String nome, String cognome, Date nascita, ArrayList<Integer> idLibro, String tipoUtenza) {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.nascita = nascita;
-        this.idLibro = idLibro;
-        this.tipoUtenza = "Argento";
-
+    public Utente(String tipoUtenza) {
+        this.tipoUtenza = tipoUtenza;
     }
 
     public String getNome() {
@@ -60,7 +57,7 @@ public class Utente {
         return idLibro;
     }
 
-    public void setIdLibro(ArrayList<Integer> idLibro) {
+    public void setIdLibro(ArrayList<Integer> idLibro) { //Integer = WrapperClass
         this.idLibro = idLibro;
     }
 
@@ -73,15 +70,19 @@ public class Utente {
     }
 
     public int getCountPrestiti() {
-        return countPrestiti;
+        return idLibro.size();
     }
 
-    public void setCountPrestiti(int countPrestiti) {
-        this.countPrestiti = count.incrementAndGet();
+    public int getTesseraPunti() {
+        return tesseraPunti;
+    }
+
+    public void setTesseraPunti(int tesseraPunti) {
+        this.tesseraPunti = countPunti.incrementAndGet();
     }
 
     public String toString(){
-        String st = "Nome: " + nome + " Cognome: " + cognome + "Data di nascita: " + nascita + "Utente: " + tipoUtenza + "Libri in prestito: " + idLibro.toString() + "Prestiti effettuauti: " + countPrestiti + "\n";
+        String st = "Nome: " + nome + "; " + " Cognome: " + cognome + "; " + "Data di nascita: " + nascita + "; " +  "Utente: " + tipoUtenza + "; " + "Prestiti effettuauti: " + getCountPrestiti() + "; " + "\n";
         return st;
     }
 }

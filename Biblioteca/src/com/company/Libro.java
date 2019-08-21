@@ -7,7 +7,8 @@ public class Libro {
     private int nCopieIn;
     private int nCopieOut;
     private int id;
-    private static final AtomicInteger count = new AtomicInteger(0);
+    private int count = 0;
+    private static final AtomicInteger countP = new AtomicInteger(0);
 
     public String getAutore() {
         return autore;
@@ -54,11 +55,11 @@ public class Libro {
         this.titolo = titolo;
         this.nCopieIn = nCopieIn;
         this.nCopieOut = 0;
-        this.id = count.incrementAndGet();
+        this.id = countP.incrementAndGet();
     }
 
     public String toString(){
-        String st = "Autore: " + autore + " Titolo: " + titolo + " N Copie: " + nCopieIn + "N Copie prestate: " + nCopieOut + "\n";
+        String st = "Autore: " + autore + "; " + " Titolo: " + titolo + "; " + " N Copie: " + nCopieIn + "; " + "N Copie prestate: " + nCopieOut + "; " + "\n";
         return st;
     }
 }
