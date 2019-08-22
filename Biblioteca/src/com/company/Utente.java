@@ -1,25 +1,18 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class Utente {
+public class Utente implements Oro{
     private String nome, cognome;
     private String codiceFiscale;
     private Date nascita;
-    private ArrayList<Integer> idLibro = new ArrayList<Integer>();
-    //private HashMap<Integer, Integer> idLibro = new HashMap<Integer, Integer>();
+    private ArrayList<Integer> idLibro = new ArrayList<>();
     private String tipoUtenza;
-    private final AtomicInteger countPunti = new AtomicInteger(0);
+    private static int count = 0;
+    private static int countPrestiti = 0;
     private int tesseraPunti;
 
-
-    public Utente(String tipoUtenza) {
-        this.tipoUtenza = tipoUtenza;
-    }
 
     public String getNome() {
         return nome;
@@ -27,10 +20,6 @@ public class Utente {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getCognome() {
-        return cognome;
     }
 
     public void setCognome(String cognome) {
@@ -43,10 +32,6 @@ public class Utente {
 
     public void setCodiceFiscale(String codiceFiscale) {
         this.codiceFiscale = codiceFiscale;
-    }
-
-    public Date getNascita() {
-        return nascita;
     }
 
     public void setNascita(Date nascita) {
@@ -78,11 +63,15 @@ public class Utente {
     }
 
     public void setTesseraPunti(int tesseraPunti) {
-        this.tesseraPunti = countPunti.incrementAndGet();
+        this.tesseraPunti = ++count;
     }
 
     public String toString(){
         String st = "Nome: " + nome + "; " + " Cognome: " + cognome + "; " + "Data di nascita: " + nascita + "; " +  "Utente: " + tipoUtenza + "; " + "Prestiti effettuauti: " + getCountPrestiti() + "; " + "\n";
         return st;
+    }
+
+    public void cambiaInOro(String tipoUtenza){
+        this.tipoUtenza = "Oro";
     }
 }

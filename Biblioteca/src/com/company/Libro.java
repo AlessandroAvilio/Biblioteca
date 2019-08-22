@@ -1,18 +1,11 @@
 package com.company;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Libro {
     private String autore, titolo;
     private int nCopieIn;
     private int nCopieOut;
     private int id;
-    private int count = 0;
-    private static final AtomicInteger countP = new AtomicInteger(0);
-
-    public String getAutore() {
-        return autore;
-    }
+    private static int count = 0;
 
     public void setAutore(String autore) {
         this.autore = autore;
@@ -46,16 +39,8 @@ public class Libro {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Libro(String autore, String titolo, int nCopieIn, int nCopieOut) {
-        this.autore = autore;
-        this.titolo = titolo;
-        this.nCopieIn = nCopieIn;
-        this.nCopieOut = 0;
-        this.id = countP.incrementAndGet();
+    public Libro() {
+        this.id = ++count;
     }
 
     public String toString(){
