@@ -1,14 +1,16 @@
 package com.company;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.io.*;
+import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
-
-
-    public static void main(String[] args) {
-         
+    public static void main(String[] args) throws IOException {
+        Gson gson = new Gson();
         Scanner scan = new Scanner(System.in);
         String cod;
         HashMap<Integer, Libro> biblio = new HashMap<>();
@@ -17,6 +19,10 @@ public class Main {
         int x;
         Utente utente;
         Libro libro;
+        String jsonUtente;
+        String jsonLibro;
+        Type foundListTypeUtente = new TypeToken<ArrayList<Utente>>(){}.getType();
+        Type foundListTypeLibro = new TypeToken<ArrayList<Libro>>(){}.getType();
 
         //VARIABILI DI LIBRO
         int  nCopieIn;
@@ -40,6 +46,10 @@ public class Main {
                             "6.Mostra libri presenti\n" +
                             "7.Inserisci un nuovo utente nel sistema\n" +
                             "8. Visualizza utenze\n" +
+                            "9.Salva utenze\n"+
+                            "10.Visualizza utenze salvate\n"+
+                            "11.Salva libri\n" +
+                            "12.Visualizza libri salvati\n"+
                             "0.Uscire dal programma");
 
                     scelta = scan.nextInt();
@@ -214,6 +224,32 @@ public class Main {
                                 System.out.println(Users.get(cf).getIdLibro());
                             }
                             break;
+                        case 9:
+                            ArrayList<Utente> userList = new ArrayList<>();
+                            for(String cf : Users.keySet()){
+                                userList.add(Users.get(cf));
+                            }
+                            jsonUtente = gson.toJson(userList);
+                            stampaUtenzeSuFile(jsonUtente);
+                            break;
+                        case 10:
+                            BufferedReader brUsers = new BufferedReader(new FileReader("C:\\Users\\alessandroav\\Desktop\\utenze.json"));
+                            List<Utente> user = gson.fromJson(brUsers, foundListTypeUtente);
+                            System.out.println(user);
+                            break;
+                        case 11:
+                            ArrayList<Libro> bookList = new ArrayList<>();
+                            for(Integer index : biblio.keySet()){
+                                bookList.add(biblio.get(index));
+                            }
+                            jsonLibro = gson.toJson(bookList);
+                            stampaLibriSuFile(jsonLibro);
+                            break;
+                        case 12:
+                            BufferedReader brBooks = new BufferedReader(new FileReader("C:\\Users\\alessandroav\\Desktop\\libri.json"));
+                            List<Libro> books = gson.fromJson(brBooks, foundListTypeLibro);
+                            System.out.println(books);
+                            break;
                         default:
                             System.out.println("Input non corretto. Si prega di scegliere una delle opzioni elencate sopra");
                             break;
@@ -235,6 +271,28 @@ public class Main {
             } while (x == 1);
             System.out.println("Arrivederci ;)");
         }catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void stampaUtenzeSuFile(String json) throws IOException {
+        FileWriter writer = new FileWriter("C:\\Users\\alessandroav\\Desktop\\utenze.json");
+        try{
+            writer.write(json);
+            writer.flush();
+            writer.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    private static void stampaLibriSuFile(String json) throws IOException {
+        FileWriter writer = new FileWriter("C:\\Users\\alessandroav\\Desktop\\libri.json");
+        try{
+            writer.write(json);
+            writer.flush();
+            writer.close();
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
