@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed4cb1b5-84d5-4b18-b74c-50047b118f2a" name="Default Changelist" comment="" />
+    <list default="true" id="ed4cb1b5-84d5-4b18-b74c-50047b118f2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Utente$listaUtenti.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Biblioteca/com/company/Utente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Utente.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +40,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="C:/Gson/gson-2.8.5.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Biblioteca" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -89,7 +99,11 @@
       <workItem from="1566395800110" duration="7234000" />
       <workItem from="1566457050722" duration="18720000" />
       <workItem from="1566544568331" duration="21589000" />
-      <workItem from="1566803976414" duration="15367000" />
+      <workItem from="1566803976414" duration="25086000" />
+      <workItem from="1566890684719" duration="516000" />
+      <workItem from="1566891234358" duration="882000" />
+      <workItem from="1566892168437" duration="24555000" />
+      <workItem from="1566976383530" duration="26204000" />
     </task>
     <servers />
   </component>
@@ -118,24 +132,37 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Libro.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Utente.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>88</line>
+          <line>118</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/Libro.java</url>
           <line>22</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Utente.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Utente.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
+          <line>210</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/company/Utente.java</url>
+          <line>57</line>
+          <properties class="com.company.Utente">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -2,7 +2,6 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Utente implements Oro {
     private String nome, cognome;
@@ -11,19 +10,8 @@ public class Utente implements Oro {
     private ArrayList<Integer> idLibro = new ArrayList<>();
     private String tipoUtenza;
     private static int count = 0;
-    private static int countPrestiti = 0;
+    private int countPrestiti;
     private int tesseraPunti;
-    String className;
-    List<listaUtenti> listaUtenti;
-
-    /*public Utente(String className, List<listaUtenti> listaUtenti) {
-        this.className = className;
-        this.listaUtenti = listaUtenti;
-    }*/
-
-    public void setClassName(String className) {
-        this.className = className;
-    }
 
     public String getNome() {
         return nome;
@@ -37,10 +25,6 @@ public class Utente implements Oro {
         this.cognome = cognome;
     }
 
-    public String getCognome() {
-        return cognome;
-    }
-
     public String getCodiceFiscale() {
         return codiceFiscale;
     }
@@ -51,10 +35,6 @@ public class Utente implements Oro {
 
     public void setNascita(Date nascita) {
         this.nascita = nascita;
-    }
-
-    public Date getNascita() {
-        return nascita;
     }
 
     public ArrayList<Integer> getIdLibro() {
@@ -73,8 +53,12 @@ public class Utente implements Oro {
         this.tipoUtenza = tipoUtenza;
     }
 
+    public void setCountPrestiti(int countPrestiti) {
+        this.countPrestiti = countPrestiti;
+    }
+
     public int getCountPrestiti() {
-        return idLibro.size();
+        return countPrestiti;
     }
 
     public int getTesseraPunti() {
@@ -82,7 +66,7 @@ public class Utente implements Oro {
     }
 
     public void setTesseraPunti(int tesseraPunti) {
-        this.tesseraPunti = ++count;
+        this.tesseraPunti = tesseraPunti;
     }
 
     public String toString() {
@@ -94,23 +78,6 @@ public class Utente implements Oro {
         this.tipoUtenza = "Oro";
     }
 
-    public static class listaUtenti {
-        String nome, cognome, codiceFiscale, tipoUtenza;
-        Date nascita;
-        int tesseraPunti;
-        ArrayList<Integer> idLibro = new ArrayList<>();
-
-        public listaUtenti(String nome, String cognome, String codiceFiscale, Date nascita, String tipoUtenza) {
-            this.nome = nome;
-            this.cognome = cognome;
-            this.codiceFiscale = codiceFiscale;
-            this.nascita = nascita;
-            this.tipoUtenza = tipoUtenza;
-            //this.tesseraPunti = tesseraPunti;
-            //this.idLibro = idLibro;
-
-        }
-    }
 }
 
 
